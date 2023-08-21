@@ -9,7 +9,7 @@
 
 ## How to Use
 
-1. Clone this repository: `git clone https://github.com/YourUsername/Ping-Pong-Table-Simulator`
+1. Clone this repository: `git clone https://github.com/OriCohen05/Ping-Pong-Table-Simulator`
 2. Navigate to the project directory: `cd Ping-Pong-Table-Simulator`
 3. Open the `ping_pong_table.html` file in your web browser to see the ping pong table simulator in action.
 
