@@ -1,0 +1,81 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(to bottom, #4CAF50, #2980B9);
+}
+
+.table {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    background-color: #2980B9;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table .net {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: #fff;
+}
+
+.table .paddle {
+    position: absolute;
+    width: 10px;
+    height: 60px;
+    background-color: #fff;
+    transition: top 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.table .paddle.player1 {
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    background-color: #FF5722;
+    border-radius: 10px;
+}
+
+.table .paddle.player2 {
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: #FF5722;
+    border-radius: 10px;
+}
+
+.table .ball {
+    top: 20%;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #FFC107;
+    border-radius: 50%;
+    animation: moveSideToSide 2s infinite alternate, bounce 2s infinite;
+    z-index: 2;
+}
+
+@keyframes moveSideToSide {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: calc(100% - 20px);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
