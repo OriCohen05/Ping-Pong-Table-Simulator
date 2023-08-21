@@ -1,0 +1,91 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(to bottom, #4CAF50, #2980B9);
+}
+
+.table {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    background-color: #2980B9;
+    border-radius: 10px;
+    overflow: hidden;
+
+    .net {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 100%;
+        background-color: #fff;
+    }
+
+    .player {
+        position: absolute;
+        width: 40px;
+        height: 100px;
+        background-color: #FF5722;
+
+        .head {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #FFC107;
+            margin: 10px auto 0;
+        }
+
+        .body {
+            width: 20px;
+            height: 40px;
+            background-color: #FFC107;
+            margin: 5px auto 0;
+        }
+
+        .arm {
+            width: 10px;
+            height: 60px;
+            background-color: #FFC107;
+            position: absolute;
+            top: 15px;
+            left: -10px;
+        }
+
+        &:last-child {
+            right: 0;
+            transform: scaleX(-1);
+        }
+    }
+
+    .ball {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #FFC107;
+        border-radius: 50%;
+        animation: moveSideToSide 2s infinite alternate, bounce 2s infinite;
+        z-index: 2;
+    }
+}
+
+@keyframes moveSideToSide {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: calc(100% - 20px);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-160px);
+    }
+}
